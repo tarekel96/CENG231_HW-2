@@ -5,9 +5,9 @@
 
 int main(){
 	pid_t pid;
-	 char* message;
-	 int n;
-	 printf("fork program starting...\n");
+	char* message;
+	int n;
+	printf("fork program starting...\n");
   
 	pid = fork();
   
@@ -17,15 +17,16 @@ int main(){
 			exit(1);
 		case 0:
 			message = "This is the child";
+			puts(message);
 			n = 5;
+			exit(42);
 			break;
 		default:
 			message = "This is the parent";
-			n = 3;
+			puts(message);
+			while(1)
+				sleep(1000);
 			break;
 	}
-	for(; n > 0; n--){
-		puts(message);
-		sleep(1);
-	}
+	puts("Finished switch statement");
 }
