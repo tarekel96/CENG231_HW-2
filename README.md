@@ -2,7 +2,7 @@
 
 ## Description of Program:
 - A C Program that creates a parent process and then forks the process to create a child process. The parent process is never terminated with a wait (or equivalent) command and so the child process remains running until the program is terminated and becomes a zombie process.
-- The zombie process can be seen with the command: ps -al
+- The zombie process, <defunct>, can be seen with the command: ps -al
 - To kill the zombie program, the programmer can terminate the program with CTRL-C or open another terminal to programatically kill the process with the command: sudo kill -9 pid
 - The program has an error checking condition that utilizes perror to give the programmers more information in case forking the process failed.
 
